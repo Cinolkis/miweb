@@ -1,0 +1,20 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+
+   {% block content %}
+
+      {% for post in posts %}
+
+         <h2>{{post.titulo}}</h2>
+
+         <p>{{post.contenido}}</p>
+
+         <p><img src="{{post.imagen.url}}"></p>
+   
+         <div><p> </p></div>
+
+      {% endfor %}
+
+   {% endblock%}
