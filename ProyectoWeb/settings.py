@@ -59,7 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['C:/Users/amy/Desktop/ProyectoDjango/ProyectoWeb/ProyectoWebApp/template/','C:/Users/amy/Desktop/ProyectoDjango/ProyectoWeb/Servicios/template/',
-        'C:/Users/amy/Desktop/ProyectoDjango/ProyectoWeb/Blog/template/'],
+        'C:/Users/amy/Desktop/ProyectoDjango/ProyectoWeb/Blog/template/', 'C:/Users/amy/Desktop/ProyectoDjango/ProyectoWeb/Contacto/template/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,5 +131,3 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Prueba
-# Prueba 1
