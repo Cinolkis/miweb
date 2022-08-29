@@ -1,0 +1,20 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+
+   {% block content %}
+
+   
+    <div class='contenedorForm'><table style="color:aliceblue; margin: 20px auto">{{miForm}}</table>
+        <form action="" method="post" style="text-align: center;">{% csrf_token %}
+
+          <input type="submit" value="Enviar" style="width: 150px;">
+
+        </form>
+
+    </div>
+
+
+
+   {% endblock%}
