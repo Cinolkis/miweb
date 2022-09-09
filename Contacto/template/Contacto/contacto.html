@@ -6,12 +6,26 @@
    {% block content %}
 
    
-    <div class='contenedorForm'><table style="color:aliceblue; margin: 20px auto">{{miForm}}</table>
-        <form action="" method="post" style="text-align: center;">{% csrf_token %}
+    <div class='contenedorForm'>
+      
+      {% if "valido" in request.GET %}
+    
+          <p style="color:aliceblue;">La informacion se envio correctamente</p>
+    
+      {% endif %}
 
-          <input type="submit" value="Enviar" style="width: 150px;">
+      {% if "novalido" in request.GET %}
+    
+      <p style="color:aliceblue;">Error</p>
 
-        </form>
+      {% endif %}
+      <form action="" method="post" style="text-align: center;">{% csrf_token %}
+
+        <table style="color:aliceblue; margin: 20px auto">{{miForm}}</table>
+
+        <input type="submit" value="Enviar" style="width: 150px;">
+
+      </form>
 
     </div>
 

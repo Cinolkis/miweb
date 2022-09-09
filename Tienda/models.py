@@ -1,0 +1,36 @@
+from asyncio.windows_events import NULL
+from distutils.command import upload
+from mailbox import NoSuchMailboxError
+from pickle import TRUE
+from pyexpat import model
+from tabnanny import verbose
+from tkinter import CASCADE
+from django.db import models
+
+# Create your models here.
+
+class CategoriaProd(models.Model):
+    nombre=models.CharField(max_length=50)
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name="categoriaProd"
+        verbose_name_plural="categoriasProd"
+
+    def __str__(self):
+        return self.nombre
+
+class Producto(models.Model):
+    nombre=models.CharField(max_length=50)
+    categorias=models.ForeignKey(CategoriaProd, on_delete=models.CASCADE)
+    imagen=models.ImageField(upload_to="Tienda",null=True, blank=True)
+    precio=models.FloatField()
+    disponibilidad=models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name="Producto"
+        verbose_name_plural="Productos"
+
+    def __str__(self):
+        return self.nombre
